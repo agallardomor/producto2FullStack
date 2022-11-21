@@ -1,14 +1,41 @@
+const http= require('http');
 const express = require('express');
-const path = require('path');
+//const path = require('path');
+const socketio = require('socketio');
+
 
 const app = express();
 app.use(express.static('resources'))
 
-const port = process.env.PORT || 8080;
+
+
+//const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     res.redirect(301, '/login');
 })
+
+const server = http.createServer(app);
+const io = socketio(server);
+
+io.on('connection',(sock) => {
+  console.log('somenoe is connected')
+
+});
+
+
+
+
+server.on('error', (err) => {
+  console.error(err);
+})
+
+server.listen(8080,()=> {
+  console.log('server is ready')
+})
+
+
+
 
 // Página de Login
 app.get('/login', function(req, res) {

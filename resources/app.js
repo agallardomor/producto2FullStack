@@ -34,4 +34,6 @@ function setAvatarImage(url){
 }
 
 
+const sock = io();
+
 window.addEventListener("load",getDataFromURL() );

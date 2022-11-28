@@ -40,11 +40,11 @@ var app = express();
 var server = requiere('http').Server(app);
 var io = require('socket.io')(server);
 
-app.use(express.static('vistas'))
+/*app.use(express.static('vistas'))
 
 app.get('/', (req, res) => {
   res.redirect(301, '/login');
-})
+})*/
 
 io.on('connection',function(socket) {
   console.log('Connection established')

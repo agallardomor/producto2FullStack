@@ -1,4 +1,6 @@
 
+
+
 const avatar = document.getElementById("avatar-home");
 
 const salas = document.querySelector(".contenedor-salas");
@@ -37,3 +39,7 @@ function setAvatarImage(url){
 const sock = io();
 
 window.addEventListener("load",getDataFromURL() );
+
+
+
+

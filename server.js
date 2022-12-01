@@ -37,14 +37,14 @@ console.log('Server started at http://localhost:' + port);*/
 
 var express = require('express');
 var app = express();
-var server = requiere('http').Server(app);
+var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-/*app.use(express.static('vistas'))
+app.use(express.static('vistas'))
 
 app.get('/', (req, res) => {
-  res.redirect(301, '/login');
-})*/
+  res.redirect(301, '/vistas/login');
+})
 
 io.on('connection',function(socket) {
   console.log('Connection established')
